@@ -1,0 +1,456 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix gn:      <http://www.geonames.org/ontology#> .
+@prefix ibge:    <https://metadados.ibge.gov.br/#> .
+
+ibge:Cidade a rdf:Class;
+    rdfs:subClassOf gn:P;
+    rdfs:label "Brazilian County" ;
+    rdfs:comment "Class to represent a brazilian county according to the Brazilian Institute of 
+ Geography and Statistics (IBGE)" .
+    
+ibge:codmun a rdf:Property;
+    rdfs:label "County Code" ;
+    rdfs:comment "6 digit code for the current county" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:codmundv a rdf:Property;
+    rdfs:label "County Code" ;
+    rdfs:comment "7 digit code for the current county" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classeRegic a rdf:Property;
+    rdfs:label "Classification at the REGIC study from IBGE." ;
+    rdfs:comment "The type of city in the brazilian urban network. The current brazilian urban network is divided according to the urban network, population and relationships." ;
+    rdfs:domain ibge:Cidade .
+
+ibge:nivelRegic a rdf:Property;
+    rdfs:label "Level of the classification at the REGIC study from IBGE." ;
+    rdfs:comment "There are 5 basic types of levels. 1 stands for Metropolis; 2 for Regional Capital; 3 for Sub-Regional Center; 4 for Area Centers; and 5 for Local Centers." ;
+    rdfs:range xsd:string .
+
+ibge:destRegic a rdf:Property;
+    rdfs:label "The next city at the Urban Hierarchy" ;
+    rdfs:comment "The next city at the Urban Hierarchy." ;
+    rdfs:range ibge:Cidade ;
+    rdfs:domain ibge:Cidade .
+
+ibge:inRegic a rdf:Property;
+    rdfs:label "Inside some Urban Hierarchy" ;
+    rdfs:comment "Indicates that the current city is subordinate to another under the REGIC study. This property indicates the city and level of this city which is above it." ;
+    rdfs:domain ibge:Cidade .
+
+ibge:cityRegic a rdf:Property;
+    rdfs:label "City at the REGIC classification" ;
+    rdfs:comment "Indicates the brazilian city at the Urban Hierarchy." ;
+    rdfs:range ibge:Cidade .
+    
+ibge:nivelRegic a rdf:Property;
+    rdfs:label "Level at the Urban Hierarchy." ;
+    rdfs:comment "Indicates the level of the city at the Urban Hierarchy." ;
+    rdfs:range xsd:string .
+
+ibge:ric04 a rdf:Property;
+    rdfs:label "Added value of the agricultural sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric05 a rdf:Property;
+    rdfs:label "Added value of the industrial sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric06 a rdf:Property;
+    rdfs:label "Added value of the service sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric07 a rdf:Property;
+    rdfs:label "Added value of the public administration" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric08 a rdf:Property;
+    rdfs:label "Tax on GDP" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric09 a rdf:Property;
+    rdfs:label "Centrality levels from 2007" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric10 a rdf:Property;
+    rdfs:label "Centrality denomination from 2007" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric11 a rdf:Property;
+    rdfs:label "Centrality levels from 1966" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric12 a rdf:Property;
+    rdfs:label "Demonination of centrality levels from 1966" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+    
+ibge:ric13 a rdf:Property;
+    rdfs:label "Demonination of centrality levels from 1978" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric14 a rdf:Property;
+    rdfs:label "Centrality levels from 1993" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric15 a rdf:Property;
+    rdfs:label "Demonination of centrality levels from 1993" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric16 a rdf:Property;
+    rdfs:label "Classification of the territories management centers" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric17 a rdf:Property;
+    rdfs:label "Centrality level of the Federal Management" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric18 a rdf:Property;
+    rdfs:label "Centrality level of the Business Management" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric19 a rdf:Property;
+    rdfs:label "Number of commercial sector classes" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric20 a rdf:Property;
+    rdfs:label "Percentage of the commercial diversity" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric21 a rdf:Property;
+    rdfs:label "Centrality level of the commercial sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric22 a rdf:Property;
+    rdfs:label "Number of service sector classes" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric23 a rdf:Property;
+    rdfs:label "Percentage of the service diversity" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric24 a rdf:Property;
+    rdfs:label "Centrality level of the service sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric25 a rdf:Property;
+    rdfs:label "Number of commercial and service sector classes" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric26 a rdf:Property;
+    rdfs:label "Percentage of the diversity of the commercial and service sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric27 a rdf:Property;
+    rdfs:label "Centrality level of the commercial and service sector" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric28 a rdf:Property;
+    rdfs:label "Number of commercial and service sector classes" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric29 a rdf:Property;
+    rdfs:label "Number of banks acting nationally" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric30 a rdf:Property;
+    rdfs:label "Volume of assets (R$1000,00)" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric31 a rdf:Property;
+    rdfs:label "Bank hierarchy classes" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric32 a rdf:Property;
+    rdfs:label "Presence of Banco do Brasil agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric33 a rdf:Property;
+    rdfs:label "Presence of Bradesco agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric34 a rdf:Property;
+    rdfs:label "Presence of Itau agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric35 a rdf:Property;
+    rdfs:label "Presence of Caixa Econômica Federal agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric36 a rdf:Property;
+    rdfs:label "Presence of HSBC agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric37 a rdf:Property;
+    rdfs:label "Presence of Unibanco agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric38 a rdf:Property;
+    rdfs:label "Presence of ABN AMRO Real agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric39 a rdf:Property;
+    rdfs:label "Presence of Banco Rural agencies" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric40 a rdf:Property;
+    rdfs:label "Number of types of undergraduate courses" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric41 a rdf:Property;
+    rdfs:label "Number of large areas of knowledge" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric42 a rdf:Property;
+    rdfs:label "Number of undergraduate registrations" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric43 a rdf:Property;
+    rdfs:label "Centrality levels of graduation" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric44 a rdf:Property;
+    rdfs:label "Centrality levels of post graduation" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric45 a rdf:Property;
+    rdfs:label "Number of post graduate courses with assessment 6 or 7 - Courses of Excellence" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric46 a rdf:Property;
+    rdfs:label "Percentage of post graduate courses with assessment 6 or 7 on the total courses of the county" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric47 a rdf:Property;
+    rdfs:label "Complexity class of health care" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric48 a rdf:Property;
+    rdfs:label "Hospitalization volume class" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric49 a rdf:Property;
+    rdfs:label "Centrality level of health" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric50 a rdf:Property;
+    rdfs:label "Number of internet domains" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric51 a rdf:Property;
+    rdfs:label "Domains per 10000 resident" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric52 a rdf:Property;
+    rdfs:label "Weights of TV networks" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric53 a rdf:Property;
+    rdfs:label "Centrality levels of TV networks" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric54 a rdf:Property;
+    rdfs:label "Centrality levels of air connections" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric55 a rdf:Property;
+    rdfs:label "Number of big companies headquarters" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric56 a rdf:Property;
+    rdfs:label "Measure of relationship intensity" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric57 a rdf:Property;
+    rdfs:label "Number of relationship at the transport form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric58 a rdf:Property;
+    rdfs:label "Relationship classes for transportation" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric59 a rdf:Property;
+    rdfs:label "Number of relationship at the buying form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric60 a rdf:Property;
+    rdfs:label "Relationship classes for buying" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric61 a rdf:Property;
+    rdfs:label "Number of relationship at the courses form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric62 a rdf:Property;
+    rdfs:label "Relationship classes for courses" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric63 a rdf:Property;
+    rdfs:label "Number of relationship at the recreation form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric64 a rdf:Property;
+    rdfs:label "Relationship classes for recreation" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric65 a rdf:Property;
+    rdfs:label "Number of relationship at the health form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric66 a rdf:Property;
+    rdfs:label "Relationship classes for health" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric67 a rdf:Property;
+    rdfs:label "Number of relationship at the newspaper form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric68 a rdf:Property;
+    rdfs:label "Relationship classes for the newspaper" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric69 a rdf:Property;
+    rdfs:label "Number of relationship at the airport form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric70 a rdf:Property;
+    rdfs:label "Relationship classes for airports" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric71 a rdf:Property;
+    rdfs:label "Number of relationship at the products form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric72 a rdf:Property;
+    rdfs:label "Relationship classes for products" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric73 a rdf:Property;
+    rdfs:label "Number of relationship at the inputs form" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric74 a rdf:Property;
+    rdfs:label "Relationship classes for inputs" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:ric75 a rdf:Property;
+    rdfs:label "Broadband internet presence" ;
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classePessoasBrancas a rdf:Property;
+    rdfs:label "Classification of the percentage of white people" ;
+    rdfs:comment "IBGE classification according to the percentage of white people among its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classePessoasPretas a rdf:Property;
+    rdfs:label "Classification of the percentage of black people" ;
+    rdfs:comment "IBGE classification according to the percentage of black people among its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classePessoasAmarelas a rdf:Property;
+    rdfs:label "Classification of the percentage of yellow people" ;
+    rdfs:comment "IBGE classification according to the percentage of yellow people (of Japanese, Korean or Chinese origin) among its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classePessoasIndigenas a rdf:Property;
+    rdfs:label "Classification of the percentage of indigenous people" ;
+    rdfs:comment "IBGE classification according to the percentage of indigenous people among its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classePIBPercapita rdf:Property;
+    rdfs:label "Classification of the GDP per inhabitant" ;
+    rdfs:comment "IBGE classification according to the GDP per inhabitant.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classeRazaoDeSexo rdf:Property;
+    rdfs:label "Classification of the ratio between the number of men and women" ;
+    rdfs:comment "IBGE classification according to the ratio between the sex of its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
+ibge:classeIdade65 a rdf:Property;
+    rdfs:label "Classification of the percentage of people over 65 years old" ;
+    rdfs:comment "IBGE classification according to the percentage of people with age superior to 65 years among its population.";
+    rdfs:range xsd:decimal ;
+    rdfs:domain ibge:Cidade .
+
